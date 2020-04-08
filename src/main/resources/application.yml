@@ -1,0 +1,38 @@
+##配置服务器端口号
+server.port: 8090
+##日志配置
+logging:
+  level:
+    root: WARN
+    org.springframework: INFO
+    cn.mybatisdemo: INFO
+##指定mybaits映射文件地址
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+spring:
+  ##数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/ceshi?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maxLifetime: 86330 #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒以上 ；目前阿里云的机器是86400s=24h
+      maximumPoolSize: 10 #连接池中允许的最大连接数。默认值：10
+  ##ThymeLeaf配置
+  thymeleaf:
+    #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+    mode: HTML5
+    #编码 可不用配置
+    encoding: UTF-8
+    #开发配置为false,避免修改模板还要重启服务器
+    cache: false
+    #配置模板路径，默认是templates，可以不用配置
+    prefix: classpath:/templates/
+  ##启动创建dispartServlet
+  mvc:
+    servlet:
+      load-on-startup: 100

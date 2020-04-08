@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页测试</title>
+</head>
+<body>
+<h1 th:text="${title}">标题</h1>
+<table>
+<thead>
+<tr>
+    <th>地区ID</th>
+    <th>地区级别</th>
+    <th>地区父ID</th>
+    <th>地区名称</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="area : ${areaList}">
+    <td style="text-align: center" th:text="${area.getAreaId()}">地区ID</td>
+    <td style="text-align: center" th:text="${area.areaLevel}">地区级别</td>
+    <td style="text-align: center" th:text="${area.getAreaParent()}">地区父ID</td>
+    <td style="text-align: center" th:text="${area.getAreaName()}">地区名称</td>
+</tr>
+<br>
+</table>
+</tbody>
+</body>
+</html>
