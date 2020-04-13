@@ -1,6 +1,9 @@
 package cn.mybatisdemo.login.entity.DTO;
 
+import cn.mybatisdemo.login.entity.VO.AreaVO;
 import lombok.Data;
+
+import java.util.List;
 
 /**
  * @Description : 
@@ -21,4 +24,6 @@ public class AreaDTO {
 
     /** area_parent */
     private Integer areaParent;
+
+    private List<AreaVO> areaNodes;
 }

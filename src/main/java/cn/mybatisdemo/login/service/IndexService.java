@@ -28,4 +28,5 @@ public interface IndexService {
      */
     List<AreaVO> listAreaMybatis();
 
+    AreaVO listAreaJson();
 }

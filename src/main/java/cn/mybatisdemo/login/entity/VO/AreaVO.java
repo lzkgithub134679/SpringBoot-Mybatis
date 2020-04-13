@@ -2,6 +2,8 @@ package cn.mybatisdemo.login.entity.VO;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * @Description : 
  * @Author : lizhikang@youngyedu.com, 2020/4/8 11:50
@@ -20,4 +22,7 @@ public class AreaVO {
 
     /** area_parent */
     private Integer areaParent;
+
+    /** area_id */
+    private List<AreaVO> areaNodes;
 }
