@@ -5,7 +5,10 @@ logging:
   level:
     root: WARN
     org.springframework: INFO
-    cn.mybatisdemo: INFO
+    # DEBUG 是为了显示sql日志,一般是使用INFO比较好
+    cn.mybatisdemo: DEBUG
+    # 设置出jdbctemplate打印sql日志
+    org.springframework.jdbc.core.JdbcTemplate: DEBUG
 ##指定mybaits映射文件地址
 mybatis:
   mapper-locations: classpath:mappers/*.xml
