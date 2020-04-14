@@ -2,11 +2,9 @@ package cn.mybatisdemo.login.controller;
 
 import cn.mybatisdemo.login.entity.VO.AreaVO;
 import cn.mybatisdemo.login.service.IndexService;
-import com.alibaba.fastjson.JSONArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
