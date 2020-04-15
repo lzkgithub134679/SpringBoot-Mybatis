@@ -2,21 +2,21 @@ package cn.mybatisdemo.login.controller;
 
 import cn.mybatisdemo.login.entity.VO.AreaVO;
 import cn.mybatisdemo.login.service.IndexService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @Description : 
+ * @Description : 测试controller
  * @Author : lizhikang@youngyedu.com, 2020/4/8 10:45
  * @Modified : lizhikang@youngyedu.com, 2020/4/8
  */
-@Controller()
+@Controller
 @RequestMapping("/index")
 public class IndexController {
 
@@ -30,6 +30,7 @@ public class IndexController {
      * @param
      * @return java.lang.String
      */
+    @ApiOperation(value="jdbc获取地区列表", notes="jdbc获取地区列表")
     @GetMapping("/jdbc")
     public String jdbcIndex(Model model){
         List<AreaVO> areaList = indexService.listArea();
@@ -40,27 +41,16 @@ public class IndexController {
 
     /**
      * @Description : 使用mybatis访问数据库
-     * @Author : lizhikang@youngyedu.com, 2020年04月08日 11:47:38
+     * @Author : lizhikang@yo整个ungyedu.com, 2020年04月08日 11:47:38
      * @Modified : lizhikang@youngyedu.com, 2020年04月08日
      * @return
      */
+    @ApiOperation(value="mybatis获取地区列表", notes="mybatis获取地区列表")
     @GetMapping("/mybatis")
     public String mybatisIndex(Model model){
         List<AreaVO> areaList = indexService.listAreaMybatis();
         model.addAttribute("title","mybatis地区");
         model.addAttribute("areaList",areaList);
         return "index";
-    }
-
-    /**
-     * @Description : TODO
-     * @Author : lizhikang@youngyedu.com, 2020年04月08日 16:45:08
-     * @Modified : lizhikang@youngyedu.com, 2020年04月08日
-     */
-    @GetMapping("/json")
-    @ResponseBody
-    public AreaVO indexJson(){
-        AreaVO areaList = indexService.listAreaJson();
-        return areaList;
     }
 }
