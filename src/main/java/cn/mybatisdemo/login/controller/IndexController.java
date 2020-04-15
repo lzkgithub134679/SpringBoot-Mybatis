@@ -3,6 +3,9 @@ package cn.mybatisdemo.login.controller;
 import cn.mybatisdemo.login.entity.VO.AreaVO;
 import cn.mybatisdemo.login.service.IndexService;
 import io.swagger.annotations.ApiOperation;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,5 +55,14 @@ public class IndexController {
         model.addAttribute("title","mybatis地区");
         model.addAttribute("areaList",areaList);
         return "index";
+    }
+
+    // 计算7天后的时间和传入的比较
+    public static Boolean compareCurrentDate(String time){
+        DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
+        DateTime parse = DateTime.parse(time, format);
+        DateTime dateTime = parse.plusDays(7);
+        DateTime now = DateTime.now();
+        return dateTime.isAfter(now);
     }
 }
