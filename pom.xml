@@ -38,32 +38,36 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
-
         <!-- fastjson依赖 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.47</version>
         </dependency>
+        <!-- fastjson依赖 (end) -->
 
-        <!-- 引入mybatis -->
+        <!-- mybatis依赖 -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.2</version>
         </dependency>
+        <!-- mybatis依赖 (end) -->
 
-        <!-- 模板引擎 -->
+        <!-- 模板thymeleaf依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <!-- lombook -->
+        <!-- 模板thymeleaf依赖 (end) -->
+
+        <!-- lombook依赖 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <!-- lombook依赖 (end) -->
 
         <!-- mysql依赖 -->
         <dependency>
@@ -71,52 +75,62 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!-- mysql依赖 (end) -->
 
-        <!-- 引入Swagger -->
+        <!-- swagger依赖 -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.7.0</version>
         </dependency>
+        <!-- swagger依赖 (end) -->
 
-        <!-- 引入Swagger的页面 -->
+        <!-- swagger的页面依赖 -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.7.0</version>
         </dependency>
+        <!-- swagger的页面依赖 (end) -->
 
-        <!-- 日期处理 -->
+        <!-- 日期处理依赖 -->
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>2.10.5</version>
         </dependency>
+        <!-- 日期处理依赖 (end) -->
 
-        <!-- 引入shiro -->
+        <!-- shiro依赖 -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
             <version>1.5.2</version>
         </dependency>
+        <!-- shiro依赖 (end) -->
 
-        <!-- 定时任务 -->
+        <!-- quartz依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
+        <!-- quartz依赖 (end) -->
 
+        <!-- 开发阶段热部署依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- 开发阶段热部署依赖 (end) -->
+
+        <!-- 单元测试依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
+        <!-- 单元测试依赖 (end)-->
     </dependencies>
 
     <build>

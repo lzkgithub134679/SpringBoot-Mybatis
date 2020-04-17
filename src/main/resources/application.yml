@@ -25,7 +25,7 @@ spring:
     hikari:
       maxLifetime: 86330000 #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒以上 ；目前阿里云的机器是86400s=24h
       maximumPoolSize: 10 #连接池中允许的最大连接数。默认值：10
-  ##启动创建dispartServlet
+  ##启动初始化dispartServlet
   mvc:
     servlet:
       load-on-startup: 100
