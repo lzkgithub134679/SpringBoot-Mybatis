@@ -131,7 +131,27 @@
             <scope>test</scope>
         </dependency>
         <!-- 单元测试依赖 (end)-->
+
+        <!-- poi导入导出 -->
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-base</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-web</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-annotation</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <!-- poi导入导出 (end)-->
+
     </dependencies>
+
 
     <build>
         <plugins>

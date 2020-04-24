@@ -4,6 +4,8 @@ import cn.mybatisdemo.login.entity.VO.AreaVO;
 import cn.mybatisdemo.login.service.IndexService;
 import io.swagger.annotations.ApiOperation;
 import org.joda.time.DateTime;
+import org.joda.time.Days;
+import org.joda.time.Seconds;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.springframework.stereotype.Controller;
@@ -64,5 +66,23 @@ public class IndexController {
         DateTime dateTime = parse.plusDays(7);
         DateTime now = DateTime.now();
         return dateTime.isAfter(now);
+    }
+
+    public static void main(String [] agrs){
+        DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
+        String startIn = "2020-04-17 12:00:00";
+        String startOut = "2020-04-17 14:00:00";
+        String startInTwo = "2020-04-17 17:00:00";
+        String startOutTwo = "2020-04-17 18:00:00";
+        DateTime DateTimeStartIn = DateTime.parse(startIn, format);
+        DateTime DateTimeStartOut = DateTime.parse(startOut, format);
+        DateTime DateTimeStartInTwo = DateTime.parse(startInTwo, format);
+        DateTime DateTimeStartOutTwo = DateTime.parse(startOutTwo, format);
+        long inMillis = DateTimeStartIn.getMillis();
+        long inMillisTwo = DateTimeStartInTwo.getMillis();
+        long outMillis = DateTimeStartOut.getMillis();
+        long outMillisTwo = DateTimeStartOutTwo.getMillis();
+        long cha = (outMillis+outMillisTwo)-(inMillisTwo+inMillis);
+        System.out.println(cha/1000+"秒");
     }
 }
